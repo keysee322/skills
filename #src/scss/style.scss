@@ -430,12 +430,13 @@ ul{
     transition: linear .15s;
   }
   div{
-    border: 0px;
+    border: 0px solid #FAB807;
+    box-sizing: border-box;
     border-radius: 50%;
-    height: 0px;
+    height: 110%;
     z-index: 5;
-    width: 0px;
-    background: #FAB807;
+    width: 110%;
+    background: rgba($color: #000000, $alpha: 0);
     margin: 50%;
     transform: translate(-52% , -50%);
     

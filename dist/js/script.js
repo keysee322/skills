@@ -173,9 +173,8 @@ function Hover(number){
     duration: 200,
     timing: linear,
     draw: function(progress) {
-      document.getElementsByClassName(number + "-round")[0].style.height = progress * 110 + "%";
-      document.getElementsByClassName(number + "-round")[0].style.width = progress * 110 + "%";
-      a = progress * 110;
+      document.getElementsByClassName(number + "-round")[0].style.border = progress * 10 + "px" + " solid #FAB807";
+      a = progress * 10;
     }
   });
 }
@@ -184,8 +183,7 @@ function OutHover(number){
     duration: 200,
     timing: linear,
     draw: function(progress) {
-      document.getElementsByClassName(number + "-round")[0].style.height = a + -progress * a + "%";
-      document.getElementsByClassName(number + "-round")[0].style.width = a + -progress * a + "%";
+      document.getElementsByClassName(number + "-round")[0].style.border = a + -progress * a + "px" + " solid #FAB807";
       
     }
   });
