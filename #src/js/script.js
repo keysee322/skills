@@ -7,11 +7,12 @@ let prev_trigger;
 function FirstButton(){
   prev_trigger = trigger;
   Translate();
+  document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
   animate({
-    duration: 500,
-    timing: quadEaseOut,
+    duration: 200,
+    timing: linear,
     draw: function(progress) {
-      document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
+      document.getElementsByClassName(prev_trigger + "-round")[0].style.border = 10 + -progress * 10 + "px" + " solid #FAB807";
     }
   });
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
@@ -19,77 +20,42 @@ function FirstButton(){
   Prev();
   Translate();
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
+  animate({
+    duration: 200,
+    timing: linear,
+    draw: function(progress) {
+      document.getElementsByClassName(number + "-round")[0].style.border = progress * 10 + "px" + " solid #FAB807";
+    }
+  });
   document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
+
 }
 
-function SecondButton(){
+function OtherButton(number){
   prev_trigger = trigger;
   Translate();
+  document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
   animate({
-    duration: 500,
-    timing: quadEaseOut,
+    duration: 200,
+    timing: linear,
     draw: function(progress) {
-      document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
+      document.getElementsByClassName(prev_trigger + "-round")[0].style.border = 10 + -progress * 10 + "px" + " solid #FAB807";
     }
   });
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
-  if(trigger < 2){
-    trigger = 2;
+  if(trigger < number){
+    trigger = number;
     Next();
   } else {
-    trigger = 2;
+    trigger = number;
     Prev();
   }
   Translate();
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
+      document.getElementsByClassName(number + "-round")[0].style.border = 10 + "px" + " solid #FAB807";
   document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
 
 }
-function ThirdButton(){
-  prev_trigger = trigger;
-  Translate();
-  animate({
-    duration: 500,
-    timing: quadEaseOut,
-    draw: function(progress) {
-      document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
-    }
-  });
-  document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
-  if(trigger < 3){
-    trigger = 3;
-    Next();
-  } else {
-    trigger = 3;
-    Prev();
-  }
-  Translate();
-  document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
-  document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
-}
-function FourthButton(){
-  prev_trigger = trigger;
-  Translate();
-  animate({
-    duration: 500,
-    timing: quadEaseOut,
-    draw: function(progress) {
-      document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
-    }
-  });
-  document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
-  if(trigger < 4){
-    trigger = 4;
-    Next();
-  } else {
-    trigger = 4;
-    Prev();
-  }
-  Translate();
-  document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
-  document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
-}
-
 function Next(){
 
   let Next_slide = document.createElement("div");
@@ -143,15 +109,15 @@ function Translate(){
 }
   else  if (trigger == 2) {
   trigger_name = "second-slide";
-  trigger_action = "SecondButton()";
+  trigger_action = "OtherButton(2)";
 }
   else  if (trigger == 3) {
   trigger_name = "third-slide";
-  trigger_action = "ThirdButton()";
+  trigger_action = "OtherButton(3)";
 }
   else  if (trigger == 4) {
   trigger_name = "fourth-slide";
-  trigger_action = "FourthButton()";
+  trigger_action = "OtherButton(4)";
 }
 
 if (prev_trigger == 1) {

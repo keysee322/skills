@@ -494,9 +494,6 @@ ul {
   margin-right: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: linear .15s;
-  -o-transition: linear .15s;
-  transition: linear .15s;
 }
 
 .button_container div {
