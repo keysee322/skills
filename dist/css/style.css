@@ -507,9 +507,9 @@ ul {
   width: 0px;
   background: #FAB807;
   margin: 50%;
-  -webkit-transform: translate(-45%, -50%);
-      -ms-transform: translate(-45%, -50%);
-          transform: translate(-45%, -50%);
+  -webkit-transform: translate(-52%, -50%);
+      -ms-transform: translate(-52%, -50%);
+          transform: translate(-52%, -50%);
 }
 
 .button_container .first-slide {
