@@ -167,3 +167,31 @@ if (prev_trigger == 1) {
     prev_trigger_name = "fourth-slide";
 }
 }
+
+function Hover(number){
+  animate({
+    duration: 200,
+    timing: linear,
+    draw: function(progress) {
+      document.getElementsByClassName(number + "-round")[0].style.height = progress * 110 + "%";
+      document.getElementsByClassName(number + "-round")[0].style.width = progress * 110 + "%";
+      
+    }
+  });
+}
+function OutHover(number){
+  animate({
+    duration: 200,
+    timing: linear,
+    draw: function(progress) {
+      document.getElementsByClassName(number + "-round")[0].style.height = 110 + -progress * 110 + "%";
+      document.getElementsByClassName(number + "-round")[0].style.width = 110 + -progress * 110 + "%";
+      
+    }
+  });
+  setTimeout(200, invis);
+  function invis(){
+    //to fig some bugs
+    document.getElementsByClassName(number + "-round")[0].style.background = "rgba(0,0,0,0);";
+  }
+}

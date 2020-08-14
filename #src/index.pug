@@ -39,8 +39,12 @@ html
                                 img(src="img/icon/vk.png", alt="")
 
                     .button_container
-                        a.first-slide(href="#")
-                        a.second-slide(onclick="SecondButton()" href="#")
-                        a.third-slide(onclick="ThirdButton()" href="#")
-                        a.fourth-slide(onclick="FourthButton()" href="#")
+                        a.first-slide(onmouseenter="Hover(1)" onmouseleave="OutHover(1)" href="#")
+                            div.1-round
+                        a.second-slide(onmouseenter="Hover(2)" onmouseleave="OutHover(2)" onclick="SecondButton()" href="#")
+                            div.2-round
+                        a.third-slide(onmouseenter="Hover(3)" onmouseleave="OutHover(3)" onclick="ThirdButton()" href="#")
+                            div.3-round
+                        a.fourth-slide(onmouseenter="Hover(4)" onmouseleave="OutHover(4)" onclick="FourthButton()" href="#")
+                            div.4-round
         .second

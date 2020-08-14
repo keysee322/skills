@@ -26,4 +26,8 @@ function makeEaseOut(timing) {
 return Math.pow(timeFraction, 10);
 }
 
+function linear(timeFraction) {
+  return timeFraction;
+  }
+
 let quadEaseOut = makeEaseOut(quad);
