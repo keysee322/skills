@@ -385,6 +385,7 @@ a:hover{
 .container-small{
   z-index: 3;
   width: 1200px;
+  height: 100%;
   margin: 0 auto;
 }
 header{
@@ -451,6 +452,17 @@ h1{
   font-size: 36px;
   margin: 0px;
 }
+h2{
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+p{
+  font-family: "Open Sans";
+  font-size: 18px;
+}
 .main-title{
   position: absolute;
   transform: translate(-50%, -50%);
@@ -460,6 +472,7 @@ h1{
   width: 544px;
   left: 50%;
   top: 59%;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 .main-title-social{
   margin: 8.7vh auto 0;
@@ -467,6 +480,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  letter-spacing: 0.045em;
 }
 .second{
   height: 500px;
@@ -501,4 +515,43 @@ h1{
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, rgba(205, 202, 202, 0.51) 0%, rgba(47, 46, 46, 0.285813) 77.31%, rgba(0, 0, 0, 0.22) 100%);
+}
+
+.learn-more_block{
+  height: 690px;
+  .container-small{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  h2{
+    width: 435px;
+    margin: 21px 0 16px;
+  }
+  a{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: none;
+    width: 166px;
+    height: 45px;
+    background: #FAB807;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 30px;
+  }
+  p{
+    width: 600px;
+    margin: 0px;
+  }
+  a:hover{
+    color: black;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.0);
+  }
 }
