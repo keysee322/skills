@@ -60,7 +60,7 @@ function Next(){
 
   let Next_slide = document.createElement("div");
   Next_slide.setAttribute("class", "next_slide");
-  Next_slide.style.background = "url(../img/main-page-"+ trigger +".png) center center / cover";
+  Next_slide.style.background = "url(img/main-page-"+ trigger +".png) center center / cover";
   document.body.appendChild(Next_slide);
   let Next_slide_container = document.createElement("div");
   Next_slide_container.setAttribute("class", "next_slide_container");
@@ -78,7 +78,7 @@ function Next(){
 function Prev(){
   let Prev_slide = document.createElement("div");
   Prev_slide.setAttribute("class", "prev_slide");
-  Prev_slide.style.background = "url(../img/main-page-"+ trigger +".png) center center / cover";
+  Prev_slide.style.background = "url(img/main-page-"+ trigger +".png) center center / cover";
   document.body.appendChild(Prev_slide);
   let Prev_slide_container = document.createElement("div");
   Prev_slide_container.setAttribute("class", "prev_slide_container");
