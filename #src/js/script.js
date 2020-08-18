@@ -3,8 +3,10 @@ let trigger = 1;
 let trigger_name;
 let trigger_action;
 let prev_trigger_name;
-let prev_trigger;
+let prev_trigger = 1;
+let prev_prev_trigger = 1;
 function FirstButton(){
+  prev_prev_trigger = prev_trigger;
   prev_trigger = trigger;
   Translate();
   document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
@@ -17,24 +19,34 @@ function FirstButton(){
   });
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
   trigger = 1;
-  Prev();
+  if (prev_prev_trigger != prev_trigger && prev_prev_trigger != trigger && prev_trigger != trigger)
+  document.getElementsByClassName("wallpaper-" + (10 - (prev_trigger + prev_prev_trigger + trigger)))[0].style.zIndex = -1;
+  document.getElementsByClassName("wallpaper-" + prev_prev_trigger)[0].style.zIndex = 0;
+  document.getElementsByClassName("wallpaper-" + prev_trigger)[0].style.zIndex = 1;
+  document.getElementsByClassName("wallpaper-1")[0].style.zIndex = 2;
+
+
+  Prev(trigger);
   Translate();
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
-  animate({
-    duration: 200,
-    timing: linear,
-    draw: function(progress) {
-      document.getElementsByClassName(number + "-round")[0].style.border = progress * 10 + "px" + " solid #FAB807";
-    }
-  });
+      document.getElementsByClassName(trigger + "-round")[0].style.border = 10 + "px" + " solid #FAB807";
   document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
 
 }
 
 function OtherButton(number){
+  prev_prev_trigger = prev_trigger;
   prev_trigger = trigger;
   Translate();
   document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
+  if (prev_prev_trigger != prev_trigger && prev_prev_trigger != number && prev_trigger != number){
+  document.getElementsByClassName("wallpaper-" + (10 - (prev_trigger + prev_prev_trigger + number)))[0].style.zIndex = -1;
+  }
+  document.getElementsByClassName("wallpaper-" + prev_prev_trigger)[0].style.zIndex = 0;
+  document.getElementsByClassName("wallpaper-" + prev_trigger)[0].style.zIndex = 1;
+  document.getElementsByClassName("wallpaper-" + number)[0].style.zIndex = 2;
+  
+  
   animate({
     duration: 200,
     timing: linear,
@@ -45,10 +57,10 @@ function OtherButton(number){
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
   if(trigger < number){
     trigger = number;
-    Next();
+    Next(trigger);
   } else {
     trigger = number;
-    Prev();
+    Prev(trigger);
   }
   Translate();
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
@@ -56,38 +68,23 @@ function OtherButton(number){
   document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
 
 }
-function Next(){
-
-  let Next_slide = document.createElement("div");
-  Next_slide.setAttribute("class", "next_slide");
-  Next_slide.style.background = "url(img/main-page-"+ trigger +".png) center center / cover";
-  document.body.appendChild(Next_slide);
-  let Next_slide_container = document.createElement("div");
-  Next_slide_container.setAttribute("class", "next_slide_container");
-  Next_slide.appendChild(Next_slide_container);
+function Next(number){
   animate({
     duration: 2000,
     timing: quadEaseOut,
     draw: function(progress) {
-      Next_slide.style.left = document.documentElement.clientWidth + -progress * document.documentElement.clientWidth + "px";
+      document.getElementsByClassName("wallpaper-" + number)[0].style.left = document.documentElement.clientWidth + -progress * document.documentElement.clientWidth + "px";
     }
   });
   setTimeout(Change, 2000);
 }
 
-function Prev(){
-  let Prev_slide = document.createElement("div");
-  Prev_slide.setAttribute("class", "prev_slide");
-  Prev_slide.style.background = "url(img/main-page-"+ trigger +".png) center center / cover";
-  document.body.appendChild(Prev_slide);
-  let Prev_slide_container = document.createElement("div");
-  Prev_slide_container.setAttribute("class", "prev_slide_container");
-  Prev_slide.appendChild(Prev_slide_container);
+function Prev(number){
   animate({
     duration: 2000,
     timing: quadEaseOut,
     draw: function(progress) {
-      Prev_slide.style.left = -document.documentElement.clientWidth + progress * document.documentElement.clientWidth + "px";
+      document.getElementsByClassName("wallpaper-" + number)[0].style.left = -document.documentElement.clientWidth + progress * document.documentElement.clientWidth + "px";
     }
   });
   setTimeout(Change, 2000);
