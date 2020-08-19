@@ -5,11 +5,12 @@ let trigger_action;
 let prev_trigger_name;
 let prev_trigger = 1;
 let prev_prev_trigger = 1;
+let a = 0;
+
 function FirstButton(){
   prev_prev_trigger = prev_trigger;
   prev_trigger = trigger;
   Translate();
-  document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
   animate({
     duration: 200,
     timing: linear,
@@ -18,7 +19,10 @@ function FirstButton(){
     }
   });
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseleave", "OutHover(" + trigger + ")");
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseenter", "Hover(" + trigger + ")");
   trigger = 1;
+
   if (prev_prev_trigger != prev_trigger && prev_prev_trigger != trigger && prev_trigger != trigger)
   document.getElementsByClassName("wallpaper-" + (10 - (prev_trigger + prev_prev_trigger + trigger)))[0].style.zIndex = -1;
   document.getElementsByClassName("wallpaper-" + prev_prev_trigger)[0].style.zIndex = 0;
@@ -28,9 +32,16 @@ function FirstButton(){
 
   Prev(trigger);
   Translate();
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseleave", "");
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseenter", "");
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
-      document.getElementsByClassName(trigger + "-round")[0].style.border = 10 + "px" + " solid #FAB807";
-  document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
+  animate({
+    duration: 200,
+    timing: linear,
+    draw: function(progress) {
+      document.getElementsByClassName(trigger + "-round")[0].style.border = a + progress * (10 - a) + "px" + " solid #FAB807";    }
+  });
+      
 
 }
 
@@ -38,7 +49,7 @@ function OtherButton(number){
   prev_prev_trigger = prev_trigger;
   prev_trigger = trigger;
   Translate();
-  document.getElementsByClassName(prev_trigger_name)[0].style.background = "rgba(0,0,0,0)";
+  
   if (prev_prev_trigger != prev_trigger && prev_prev_trigger != number && prev_trigger != number){
   document.getElementsByClassName("wallpaper-" + (10 - (prev_trigger + prev_prev_trigger + number)))[0].style.zIndex = -1;
   }
@@ -55,6 +66,10 @@ function OtherButton(number){
     }
   });
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", trigger_action);
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseleave", "OutHover(" + trigger + ")");
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseenter", "Hover(" + trigger + ")");
+
+  
   if(trigger < number){
     trigger = number;
     Next(trigger);
@@ -64,8 +79,16 @@ function OtherButton(number){
   }
   Translate();
   document.getElementsByClassName(trigger_name)[0].setAttribute("onclick", "");
-      document.getElementsByClassName(number + "-round")[0].style.border = 10 + "px" + " solid #FAB807";
-  document.getElementsByClassName(trigger_name)[0].style.background = "#FAB807";
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseleave", "");
+  document.getElementsByClassName(trigger_name)[0].setAttribute("onmouseenter", "");
+
+
+  animate({
+    duration: 200,
+    timing: linear,
+    draw: function(progress) {
+      document.getElementsByClassName(trigger + "-round")[0].style.border = a + progress * (10 - a) + "px" + " solid #FAB807";    }
+  });
 
 }
 function Next(number){
@@ -130,13 +153,13 @@ if (prev_trigger == 1) {
     prev_trigger_name = "fourth-slide";
 }
 }
-let a = 0;
+
 function Hover(number){
   animate({
     duration: 200,
     timing: linear,
     draw: function(progress) {
-      document.getElementsByClassName(number + "-round")[0].style.border = progress * 10 + "px" + " solid #FAB807";
+      document.getElementsByClassName(number + "-round")[0].style.border = a + progress * (10 - a) + "px" + " solid #FAB807";
       a = progress * 10;
     }
   });
@@ -147,8 +170,17 @@ function OutHover(number){
     timing: linear,
     draw: function(progress) {
       document.getElementsByClassName(number + "-round")[0].style.border = a + -progress * a + "px" + " solid #FAB807";
-      
+      a = 10 - progress * 10;
     }
   });
 
 }
+
+let timerId = setInterval(() => {
+  Hover(trigger);
+  if (trigger != 4) {
+    OtherButton(trigger + 1);
+  } else {
+    FirstButton();
+  }
+}, 7000);
