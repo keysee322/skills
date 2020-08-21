@@ -176,7 +176,7 @@ function OutHover(number){
 
 }
 
-let timerId = setInterval(() => {
+ let timerId = setInterval(() => {
   Hover(trigger);
   if (trigger != 4) {
     OtherButton(trigger + 1);
