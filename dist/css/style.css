@@ -819,6 +819,15 @@ p {
   font-size: 12px;
   line-height: 16px;
   color: white;
+  -webkit-transition: linear 0.2s;
+  -o-transition: linear 0.2s;
+  transition: linear 0.2s;
+  border-radius: 3px;
+}
+
+.buttons a:hover {
+  background: white;
+  color: black;
 }
 
 .buttons .checkout {
@@ -826,5 +835,38 @@ p {
   color: black;
   -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
+}
+
+.map-block {
+  height: 600px;
+}
+
+.map-block .container-small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.map-text .find-us {
+  width: 286px;
+  line-height: 25px;
+}
+
+.map-text .contact-us-map {
+  margin-top: 117px;
+}
+
+.map-text .contact-us-map p {
+  margin: 10px 0;
+}
+
+#map {
+  width: 614px;
+  height: 500px;
 }

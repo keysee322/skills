@@ -665,11 +665,41 @@ p{
     font-size: 12px;
     line-height: 16px;
     color: white;
+    transition: linear 0.2s;
+    border-radius: 3px;
+  }
+  a:hover{
+    background: white;
+    color: black;
   }
   .checkout{
     background: #FAB807;
     color: black;
     box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.12);
-    border-radius: 3px;
+    
   }
+}
+.map-block{
+  height: 600px;
+  .container-small{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.map-text{
+  .find-us{
+    width: 286px;
+    line-height: 25px;
+  }
+  .contact-us-map{
+    margin-top: 117px;
+    p{
+      margin: 10px 0;
+    }
+  }
+}
+#map{
+  width: 614px;
+  height: 500px;
 }

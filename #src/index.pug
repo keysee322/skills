@@ -5,9 +5,12 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="css/style.css")
         link(rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd6qrxPquGiu--hqVLV5WrVP3mrq4wxRY&callback=initMap&libraries=&v=weekly" defer)
         script(src="js/script.js")
         script(src="js/animate.js")
+        script(src="js/map.js")
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js")
+        script(type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false")
         link(href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet")
         title Skills
     body
@@ -92,3 +95,27 @@ html
                     .buttons
                         a.order_call(href="") Заказать звонок
                         a.checkout(href="") Оформить заказ
+
+        .map-block
+            .container-small
+                .map-text
+                    .find-us
+                        h2 Где нас найти?
+                        p Саратов, проспект Кирова, 32. Арка напротив ТЦ "Манеж".
+                    .contact-us-map
+                        h2 Как с нами связаться?
+                        p По телефону: +7 (937) 225-55-71
+                        p Или в социальных сетях 
+                            img(src="img/icon/line.png", alt="")
+                            a(href="")
+                                img(src="img/icon/telegram.png", alt="")
+                            a(href="")
+                                img(src="img/icon/whatsup.png", alt="")
+                            a(href="")
+                                img(src="img/icon/instagram.png", alt="")
+                            a(href="")
+                                img(src="img/icon/facebook.png", alt="")
+                            a(href="")
+                                img(src="img/icon/vk.png", alt="")
+
+                div(id="map")

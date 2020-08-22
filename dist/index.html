@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon"/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd6qrxPquGiu--hqVLV5WrVP3mrq4wxRY&amp;callback=initMap&amp;libraries=&amp;v=weekly" defer="defer"></script>
     <script src="js/script.js"></script>
     <script src="js/animate.js"></script>
+    <script src="js/map.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/>
     <title>Skills</title>
   </head>
@@ -78,6 +81,22 @@
           </div>
           <div class="buttons"><a class="order_call" href="">Заказать звонок</a><a class="checkout" href="">Оформить заказ</a></div>
         </form>
+      </div>
+    </div>
+    <div class="map-block">
+      <div class="container-small">
+        <div class="map-text">
+          <div class="find-us">
+            <h2>Где нас найти?</h2>
+            <p>Саратов, проспект Кирова, 32. Арка напротив ТЦ "Манеж".</p>
+          </div>
+          <div class="contact-us-map">
+            <h2>Как с нами связаться?</h2>
+            <p>По телефону: +7 (937) 225-55-71</p>
+            <p>Или в социальных сетях <img src="img/icon/line.png" alt=""/><a href=""><img src="img/icon/telegram.png" alt=""/></a><a href=""><img src="img/icon/whatsup.png" alt=""/></a><a href=""><img src="img/icon/instagram.png" alt=""/></a><a href=""><img src="img/icon/facebook.png" alt=""/></a><a href=""><img src="img/icon/vk.png" alt=""/></a></p>
+          </div>
+        </div>
+        <div id="map"></div>
       </div>
     </div>
   </body>
