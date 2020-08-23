@@ -602,7 +602,8 @@ p{
 }
 .contact-us{
   height: 378px;
-  width: 100%;
+  width: 1200px;
+  margin: auto;
   background: url(../img/form_background.png) center center / cover;
   color: white;
   a{
@@ -619,19 +620,18 @@ p{
   background: rgba(0, 0, 0, 0.75);
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .contact_text{
-  width: 573px;
+  width: 523px;
   text-align: justify;
 }
 .contact_form{
-  width: 679px;
-  margin-left: 89px;
+  width: 549px;
   input{
     outline: none;
-    width: 311px;
+    width: 251px;
     height: 52px;
     background: rgba($color: #000000, $alpha: 0.0);
     border: 0px;

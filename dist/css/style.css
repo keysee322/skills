@@ -723,7 +723,8 @@ p {
 
 .contact-us {
   height: 378px;
-  width: 100%;
+  width: 1200px;
+  margin: auto;
   background: url(../img/form_background.png) center center/cover;
   color: white;
 }
@@ -746,27 +747,25 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .contact_text {
-  width: 573px;
+  width: 523px;
   text-align: justify;
 }
 
 .contact_form {
-  width: 679px;
-  margin-left: 89px;
+  width: 549px;
 }
 
 .contact_form input {
   outline: none;
-  width: 311px;
+  width: 251px;
   height: 52px;
   background: rgba(0, 0, 0, 0);
   border: 0px;
