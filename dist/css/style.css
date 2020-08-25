@@ -901,3 +901,7 @@ footer {
   display: -ms-flexbox;
   display: flex;
 }
+
+.short {
+  margin-top: -44px;
+}
