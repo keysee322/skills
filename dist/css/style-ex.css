@@ -65,8 +65,13 @@ nav a {
   color: white;
 }
 
+nav a:hover {
+  color: #FAB807;
+}
+
 .this {
   color: #FAB807;
+  cursor: default;
 }
 
 .yellow-back_logo {

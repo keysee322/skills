@@ -48,9 +48,13 @@ nav{
     a{
         color: white;
     }
+    a:hover{
+        color: #FAB807;
+    }
 }
 .this{
     color: #FAB807;
+    cursor: default;
 }
 .yellow-back_logo{
     background: url(../img/skills_logow.svg);
